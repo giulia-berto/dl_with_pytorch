@@ -15,6 +15,7 @@ echo "Downloading T1s not defaced..."
 
 #cache the list of datasets that we could download
 if [ ! -f $json_fname ]; then
+    echo "Retrieving IDs..."
     bl dataset query --limit 10000 -p $projID --datatype $datatype --datatype_tag $datatype_tag --json > $json_fname
 fi
 
@@ -41,4 +42,5 @@ for subjID in $(jq -r '.[].meta.subject' $json_fname | sort -u); do
     ((n_sub+=1))
 
 done
+rm $json_fname
 echo "Total number of subjects:$n_sub"
