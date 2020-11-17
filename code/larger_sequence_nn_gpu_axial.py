@@ -25,7 +25,8 @@ torch.set_printoptions(edgeitems=2)
 torch.manual_seed(0)
 
 #filenames
-src_dir = '../data/HCP-anat-data'
+#src_dir = '../data/HCP-anat-data'
+src_dir = '../data/HCP-anat'
 img_dir = src_dir + '/images/'
 target_file = src_dir + '/annotations.csv'
 dataset = HCPanatDataset(csv_file=target_file, root_dir=img_dir)
@@ -33,9 +34,9 @@ dataset = HCPanatDataset(csv_file=target_file, root_dir=img_dir)
 #hyperparameters
 n_crop = 20
 n_axial = 10
-perc_train = 0.8
-n_epochs = 20
-batch_size = 1
+perc_train = 0.75
+n_epochs = 25
+batch_size = 4
 learning_rate = 1e-3
 
 #apply some transformation to the data (crop)
@@ -136,7 +137,7 @@ print("Training time = %f seconds" %(time.time()-t0))
 x_axis = np.arange(n_epochs)
 plt.plot(x_axis, loss_vector, 'r--', label='loss train')
 plt.plot(x_axis, loss_val_vector, 'g--', label='loss val')
-plt.ylim(0, 0.3)
+plt.ylim(0, 0.15)
 plt.legend()
 plt.xlabel("epochs")
 plt.ylabel("loss")
