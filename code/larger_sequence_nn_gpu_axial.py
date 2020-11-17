@@ -27,14 +27,14 @@ torch.manual_seed(0)
 #filenames
 #src_dir = '../data/HCP-anat-data'
 src_dir = '../data/HCP-anat'
-img_dir = src_dir + '/images/'
-target_file = src_dir + '/annotations.csv'
+img_dir = src_dir + '/images-defaced/'
+target_file = src_dir + '/annotations-defaced.csv'
 dataset = HCPanatDataset(csv_file=target_file, root_dir=img_dir)
 
 #hyperparameters
 n_crop = 20
 n_axial = 10
-perc_train = 0.75
+perc_train = 0.85
 n_epochs = 25
 batch_size = 4
 learning_rate = 1e-3
@@ -65,9 +65,11 @@ print("Shape of one image after crop and selection of %i axial slices:" %n_axial
 print(t1.shape)
 
 #visualize an example of T1 cropped
+plt.figure()
 m=np.int(t1.shape[2]/2)
-#im=plt.imshow(t1[:,:,m])
-#plt.colorbar(im)
+im=plt.imshow(t1[:,:,m])
+plt.colorbar(im)
+plt.savefig('image_sample.png')
 
 #compute the mean and std of the data
 max_dim = len(t1.shape) #concatenating dimension
@@ -134,10 +136,11 @@ loss_vector, loss_val_vector = training_loop_val(
 print("Training time = %f seconds" %(time.time()-t0))
 
 #plot training and validation loss
+plt.figure()
 x_axis = np.arange(n_epochs)
 plt.plot(x_axis, loss_vector, 'r--', label='loss train')
 plt.plot(x_axis, loss_val_vector, 'g--', label='loss val')
-plt.ylim(0, 0.15)
+plt.ylim(0, 1)
 plt.legend()
 plt.xlabel("epochs")
 plt.ylabel("loss")
