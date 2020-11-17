@@ -16,7 +16,7 @@ torch.manual_seed(0)
 
 #filenames
 #src_dir = '../data/HCP-anat-data'
-src_dir = '../data/HCP-anat'
+src_dir = '/N/project/plab/giulia/data/HCP-anat'
 img_dir = src_dir + '/images-defaced/'
 target_file = src_dir + '/annotations-defaced.csv'
 dataset = HCPanatDataset(csv_file=target_file, root_dir=img_dir)
