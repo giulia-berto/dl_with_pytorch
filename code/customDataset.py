@@ -75,11 +75,31 @@ class SelectAxialSlices3D(object):
         self.n_axial = n_axial
 
     def __call__(self, image):
-        z_min = np.int(image.shape[0]/2) - np.int(self.n_axial/2)
-        z_max = np.int(image.shape[0]/2) + np.int(self.n_axial/2)
+        z_min = np.int(image.shape[2]/2) - np.int(self.n_axial/2)
+        z_max = np.int(image.shape[2]/2) + np.int(self.n_axial/2)
         image = image[:,:,z_min:z_max]
 
         return image
+
+
+class SelectSagittalSlices3D(object):
+    """Select some sagittal contigous central slices from
+       a 3D volume (before converting it to tensor)."""
+
+    def __init__(self, n_sagittal):
+        """
+        Args:
+            n_sagittal (int): Number of contigous central slices to keep.
+        """
+        assert isinstance(n_sagittal, int)
+        self.n_sagittal = n_sagittal
+
+    def __call__(self, image):
+        x_min = np.int(image.shape[0]/2) - np.int(self.n_sagittal/2)
+        x_max = np.int(image.shape[0]/2) + np.int(self.n_sagittal/2)
+        image = image[x_min:x_max,:,:]
+
+        return image        
 
 
 def training_loop(model, train_loader, criterion, optimizer, n_epochs):
