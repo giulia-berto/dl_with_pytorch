@@ -22,7 +22,7 @@ target_file = src_dir + '/annotations-defaced.csv'
 dataset = HCPanatDataset(csv_file=target_file, root_dir=img_dir)
 
 #hyperparameters
-n_crop = 1
+n_crop = 5
 n_sagittal = 20
 perc_train = 0.85
 n_epochs = 25
