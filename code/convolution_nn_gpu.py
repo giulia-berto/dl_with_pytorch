@@ -109,7 +109,7 @@ plt.ylabel("loss")
 plt.savefig('training_validation_losses.png')
 
 #compute accuracy in training and validation
-validate_conv(seq_model_large, train_loader, test_loader)
+validate_conv(conv_model, train_loader, test_loader)
 
 numel_list = [p.numel()
               for p in seq_model_large.parameters()
