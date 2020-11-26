@@ -25,7 +25,7 @@ dataset = HCPanatDataset(csv_file=target_file, root_dir=img_dir)
 #hyperparameters
 n_crop = 20
 perc_train = 0.85
-n_epochs = 5
+n_epochs = 20
 batch_size = 4
 learning_rate = 1e-3
 
