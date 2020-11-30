@@ -18,8 +18,8 @@ torch.manual_seed(0)
 #filenames
 #src_dir = '../data/HCP-anat-data'
 src_dir = '../data/HCP-anat'
-img_dir = src_dir + '/images-defaced/'
-target_file = src_dir + '/annotations-defaced.csv'
+img_dir = src_dir + '/images-three-classes/'
+target_file = src_dir + '/annotations-three-classes.csv'
 dataset = HCPanatDataset(csv_file=target_file, root_dir=img_dir)
 
 #hyperparameters
@@ -102,7 +102,7 @@ plt.figure()
 x_axis = np.arange(n_epochs)
 plt.plot(x_axis, loss_vector, 'r--', label='loss train')
 plt.plot(x_axis, loss_val_vector, 'g--', label='loss val')
-plt.ylim(0, 0.2)
+plt.ylim(0, 0.6)
 plt.legend()
 plt.xlabel("epochs")
 plt.ylabel("loss")
