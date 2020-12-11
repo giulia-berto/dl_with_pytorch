@@ -154,4 +154,5 @@ numel_list = [p.numel()
               if p.requires_grad == True]
 sum(numel_list), numel_list
 
-"""w.r.t. the previous example that uses the entire 3D volumes, here we have 72M parameters instead of 468M parameters, even though we used a network with one more hidden layer (Linear+Tanh)! The next step is to use CNNs."""
+"""w.r.t. the previous example that uses the entire 3D volumes, here we have 72M parameters instead of 468M parameters, 
+even though we used a network with one more hidden layer (Linear+Tanh)! The next step is to use CNNs."""
