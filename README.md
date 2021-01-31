@@ -8,3 +8,5 @@ The code was used for three classification tasks:
 * classify diffusion MR images into three classes based on their b-value (b=1000 s/mm^2, b=2000 s/mm^2, and b=3000 s/mm^2) 
 
 Note: code and examples of this repository were inspired by those collected in the book "Deep Learning with PyTorch" by Eli Stevens, Luca Antiga, and Thomas Viehmann, published by Manning Publications, 2020. https://www.manning.com/books/deep-learning-with-pytorch
+
+#### MIT Copyright (c) 2020 Giulia Bertò
