@@ -5,6 +5,6 @@ The aim of the project was to train Convolutional Neural Networks (CNNs) to auto
 The code was used for three classification tasks:
 * classify between T1 and FA anatomical MR images
 * classify whether or not a T1 anatomical image is defaced
-* classify diffusion MR images into three classes based on their b-value (b=1000 m/s^2, b=2000 m/s^2, b=3000 m/s^2) 
+* classify diffusion MR images into three classes based on their b-value (b=1000 s/mm^2, b=2000 s/mm^2, and b=3000 s/mm^2) 
 
-Note: code and examples of this repository were inspired by those collected in the book "Deep Learning with PyTorch" by Eli Stevens, Luca Antiga, and Thomas Viehmann, published by Manning Publications, 2019.
+Note: code and examples of this repository were inspired by those collected in the book "Deep Learning with PyTorch" by Eli Stevens, Luca Antiga, and Thomas Viehmann, published by Manning Publications, 2020. https://www.manning.com/books/deep-learning-with-pytorch
