@@ -1,6 +1,6 @@
 # dl_with_pytorch
 Code used for some preliminary experiments with Deep Learning (DL) and Pytorch.\
-The aim of the project was to train Convolutional Neural Networks (CNNs) to automatically assign tags to anatomical and diffusion MR images.
+The aim of the project was to train Convolutional Neural Networks (CNNs) to automatically assign tags to anatomical and diffusion Magnetic Resonance (MR) images.
 
 The code was used for three classification tasks:
 * classify between T1 and FA anatomical MR images
